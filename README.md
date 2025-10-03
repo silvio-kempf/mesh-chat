@@ -6,18 +6,18 @@ A resilient, decentralized chat system where multiple nodes exchange messages us
 
 Traditional client-server architectures have a single point of failure. If the server goes down, all communication stops. A mesh network distributes the communication burden and responsibility across all participants, making the system more resilient to node failures.
 
-## 🧠 How It Works
+## How It Works
 
 Think of it like **gossiping in a neighborhood** - when someone shares news, everyone tells their neighbors, who tell their neighbors, until everyone knows!
 
-### 🌐 Visual: Your 3 Nodes
+### Visual: Your 3 Nodes
 
 ```
      Node A                Node B                Node C
   (Port 9001)    <->    (Port 9002)    <->    (Port 9003)
-       ▲                                  ▲
-       │                                  │
-       └─────── Everyone Connected ───────┘
+       ▲                                           ▲
+       │                                           │
+       └───────────── Everyone Connected ──────────┘
 ```
 
 ### 📨 Real Example: You Type "hello" in Node A
@@ -34,26 +34,26 @@ Think of it like **gossiping in a neighborhood** - when someone shares news, eve
 🎉 All nodes saw "hello" exactly once!
 ```
 
-### 🔄 Key Concepts (Simple!)
+### Key Concepts
 
-- **📡 Flooding**: Like a cell phone tower - sends to all friends at once
-- **⏰ TTL**: "Live 8 hops" - message dies after being forwarded 8 times (no spam!)
-- **🚫 Deduplication**: "Already heard this news" - drop repeats
-- **📬 Addressing**: Private message = write recipient name, Public = everyone sees
+- **Flooding**: Like a cell phone tower - sends to all friends at once
+- **TTL**: "Live 8 hops" - message dies after being forwarded 8 times (no spam!)
+- **Deduplication**: "Already heard this news" - drop repeats
+- **Addressing**: Private message = write recipient name, Public = everyone sees
 
-### 💬 Two Message Types
+### Two Message Types
 
-**🌍 Public (Broadcast):**
+**Public (Broadcast):**
 ```bash
 hello everyone!          # All nodes see this
 ```
 
-**📮 Private (Addressed):**
+**Private (Addressed):**
 ```bash
 @127.0.0.1:9003 secret  # Only Node C sees this
 ```
 
-## 🚀 Quickstart
+## Quickstart
 
 ### Step 1: Clone & Setup
 
@@ -107,16 +107,16 @@ testing UDP flooding
 quit
 ```
 
-**🎯 You'll see:**
+**You'll see:**
 - ✅ All nodes receive broadcast messages
 - ✅ Private messages only appear on target node
 - ✅ TTL decreases with each hop (prevents infinite loops)
 - ✅ Duplicate messages are automatically dropped
 - ✅ Messages have timestamps and sender labels
 
-## Features ✨
+## Features
 
-### ✅ Implemented
+### Implemented
 - **UDP-based Communication**: Each node binds to its own UDP port
 - **Message Flooding**: Automatic propagation to all connected peers  
 - **De-duplication**: Messages with same ID are dropped (prevents loops)
