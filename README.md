@@ -17,21 +17,20 @@ Think of it like **gossiping in a neighborhood** - when someone shares news, eve
   (Port 9001)    <->    (Port 9002)    <->    (Port 9003)
        ▲                                           ▲
        │                                           │
-       └───────────── Everyone Connected ──────────┘
+       └───────────────────────────────────────────┘
 ```
 
 ### 📨 Real Example: You Type "hello" in Node A
 
-```
-1️⃣ You: "hello" in Node A           ← TTL=8 (8 hops max)
+1. You: "hello" in Node A           ← TTL=8 (8 hops max)
    
-2️⃣ Node B receives it               ← TTL=7 (show + forward)
-   Node C receives it               ← TTL=7 (show + forward)
+2. * Node B receives it             ← TTL=7 (show + forward)
+   * Node C receives it             ← TTL=7 (show + forward)
    
-3️⃣ Node B forwards to Node C        ← TTL=6 (Node C already has it, so ignore)
-   Node C forwards to Node B         ← TTL=6 (Node B already has it, so ignore)
+3. * Node B forwards to Node C      ← TTL=6 (Node C already has it, so ignore)
+   * Node C forwards to Node B      ← TTL=6 (Node B already has it, so ignore)
    
-🎉 All nodes saw "hello" exactly once!
+=> All nodes saw "hello" exactly once!
 ```
 
 ### Key Concepts
