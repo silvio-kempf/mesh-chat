@@ -1,0 +1,2 @@
+uvloop; sys_platform == 'linux'
+

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mesh-chat"
+version = "0.1.0"
+description = "A resilient mesh chat system using UDP flooding"
+dependencies = [
+    "uvloop; sys_platform == 'linux'",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = []
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
