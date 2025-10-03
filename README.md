@@ -6,6 +6,8 @@ A resilient, decentralized chat system where multiple nodes exchange messages us
 
 Traditional client-server architectures have a single point of failure. If the server goes down, all communication stops. A mesh network distributes the communication burden and responsibility across all participants, making the system more resilient to node failures.
 
+---
+
 ## How It Works
 
 Think of it like **gossiping in a neighborhood** - when someone shares news, everyone tells their neighbors, who tell their neighbors, until everyone knows!
@@ -51,6 +53,8 @@ hello everyone!          # All nodes see this
 ```bash
 @127.0.0.1:9003 secret  # Only Node C sees this
 ```
+
+---
 
 ## Quickstart
 
@@ -113,6 +117,8 @@ quit
 - ✅ Duplicate messages are automatically dropped
 - ✅ Messages have timestamps and sender labels
 
+---
+
 ## Features
 
 ### Implemented
@@ -141,6 +147,8 @@ mesh-chat/
     └── test_addressed.py   # Private messaging functionality
 ```
 
+---
+
 ## API Design
 
 ### Message Format (JSON)
@@ -165,6 +173,8 @@ python -m mesh.cli \
   --ttl 8 \                        # Message TTL limit
   --seen-ttl 120                   # Deduplication timeout
 ```
+
+---
 
 ## Testing & Validation
 
@@ -191,6 +201,8 @@ python -m mesh.cli --port 9001 --peers 127.0.0.1:9002 --ttl 1
 python -m mesh.cli --port 9001 --peers 127.0.0.1:9002 127.0.0.1:9003 127.0.0.1:9004
 ```
 
+---
+
 ## Implementation Details
 
 ### Core Algorithms
@@ -205,6 +217,8 @@ python -m mesh.cli --port 9001 --peers 127.0.0.1:9002 127.0.0.1:9003 127.0.0.1:9
 - **Serialization**: Compact JSON with no whitespace
 - **Error Handling**: Graceful malformed message dropping
 - **Memory Management**: Automatic GC of old message IDs (every 5s)
+
+---
 
 ## Limitations & Trade-offs
 
@@ -221,6 +235,8 @@ python -m mesh.cli --port 9001 --peers 127.0.0.1:9002 127.0.0.1:9003 127.0.0.1:9
 - Include metrics and monitoring
 - Support dynamic topology changes
 
+---
+
 ## Stretch Goals 🚀
 
 ### Phase 2 Features
@@ -235,14 +251,9 @@ python -m mesh.cli --port 9001 --peers 127.0.0.1:9002 127.0.0.1:9003 127.0.0.1:9
 - **Load Balancing**: Intelligent message routing to reduce congestion
 - **Fault Tolerance**: Automatic rerouting around failed nodes
 
-## Contributing
+---
 
-1. Fork and clone the repository
-2. Run tests: `python -m pytest tests/`
-3. Implement features following the existing patterns
-4. Add tests and documentation
-5. Submit a pull request
+## 📄 License
 
-## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-MIT License - See LICENSE file for details.
