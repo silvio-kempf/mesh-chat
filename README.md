@@ -66,12 +66,6 @@ what's up mesh?
 @192.168.1.100:9001 hello from across the network
 ```
 
-### Run Demo
-
-```bash
-python test_demo.py
-```
-
 ## Features ✨
 
 ### ✅ Implemented
@@ -93,12 +87,11 @@ mesh-chat/
 │   ├── node.py             # MeshNode with UDP relay and deduplication
 │   ├── console.py          # Async stdin handler with @ parsing
 │   └── cli.py              # Command-line interface
-├── tests/
-│   ├── test_protocol.py    # Message format and validation
-│   ├── test_node.py        # Flooding and deduplication logic  
-│   ├── test_ttl.py         # Time-to-live behavior
-│   └── test_addressed.py   # Private messaging functionality
-└── test_demo.py           # Interactive demonstration
+└── tests/
+    ├── test_protocol.py    # Message format and validation
+    ├── test_node.py        # Flooding and deduplication logic  
+    ├── test_ttl.py         # Time-to-live behavior
+    └── test_addressed.py   # Private messaging functionality
 ```
 
 ## API Design
