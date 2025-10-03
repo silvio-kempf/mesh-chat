@@ -20,18 +20,18 @@ Think of it like **gossiping in a neighborhood** - when someone shares news, eve
        └───────────────────────────────────────────┘
 ```
 
-### 📨 Real Example: You Type "hello" in Node A
+### Real Example: You Type "hello" in Node A
 
-1. You: "hello" in Node A           ← TTL=8 (8 hops max)
+1. You type "Hello" on Node A
    
-2. * Node B receives it             ← TTL=7 (show + forward)
-   * Node C receives it             ← TTL=7 (show + forward)
+2. * Node B receives it (show + forward)
+   * Node C receives it (show + forward)
    
-3. * Node B forwards to Node C      ← TTL=6 (Node C already has it, so ignore)
-   * Node C forwards to Node B      ← TTL=6 (Node B already has it, so ignore)
+3. * Node B forwards to Node C (Node C already has it, so ignore)
+   * Node C forwards to Node B (Node B already has it, so ignore)
    
-=> All nodes saw "hello" exactly once!
-```
+=> All nodes saw "Hello" exactly once!
+
 
 ### Key Concepts
 
